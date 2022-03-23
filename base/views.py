@@ -68,7 +68,7 @@ def home(request):
         Q(room__name__icontains=q) |
         Q(room__description__icontains=q)
     )
-    context = {'rooms': rooms, 'topics': topics, 'room_count': room_count, 'room_messages': room_messages}
+    context = {'rooms': rooms, 'topics': topics, 'room_count': room_count, 'room_messages': room_messages[:5]}
     return render(request, 'base/home.html', context)
 
 
